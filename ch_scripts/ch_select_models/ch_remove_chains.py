@@ -9,7 +9,7 @@ from pdb_splitter import *
 FINAL_ANNOTATIONS = os.path.join(BASE_HOMEDIR, "ch_scripts/modeller/final.annotations.txt")
 PATH_TO_PDB = os.path.join(BASE_HOMEDIR, "allpdb/")
 
-chaindict = {'A':'alpha', 'B':'beta'}
+chaindict = {'A': 'alpha', 'B': 'beta'}
 
 pdbs = get_chains(FINAL_ANNOTATIONS, var=2)
 
