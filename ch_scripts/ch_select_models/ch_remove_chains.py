@@ -4,9 +4,14 @@ import pandas as pd
 from Bio import PDB
 from ch_base import *
 from ch_work_with_final_annotations import *
+from pdb_splitter import *
 
-file = os.path.join(BASE_HOMEDIR, "ch_scripts/modeller/final.annotations.txt")
-pdbfiles = os.path.join(BASE_HOMEDIR, "allpdb/")
+FINAL_ANNOTATIONS = os.path.join(BASE_HOMEDIR, "ch_scripts/modeller/final.annotations.txt")
+PATH_TO_PDB = os.path.join(BASE_HOMEDIR, "allpdb/")
+
+chaindict = {'A':'alpha', 'B':'beta'}
+
+pdbs = get_chains(FINAL_ANNOTATIONS, var=2)
 
 
 def complex_type_options(type_chains):
@@ -32,74 +37,6 @@ def complex_type_options(type_chains):
             complex_type['chain_antigen'] = False
 
     return complex_type
-
-
-# code from stackoverflow
-
-class SelectChains(PDB.Select):
-    """ Only accept the specified chains when saving. """
-    def __init__(self, chain_letters):
-        self.chain_letters = chain_letters
-
-    def accept_chain(self, chain):
-        return (chain.get_id() in self.chain_letters)
-
-
-class ChainSplitter:
-    def __init__(self, out_dir=None):
-        """ Create parsing and writing objects, specify output directory. """
-        self.parser = PDB.PDBParser()
-        self.writer = PDB.PDBIO()
-        if out_dir is None:
-            out_dir = os.path.join(os.getcwd(), "chain_PDBs")
-            crdir("chain_PDBs")
-        else:
-            crdir(out_dir)
-        self.out_dir = out_dir
-
-    def make_pdb(self, pdb_path, pdb_id, chain_letters, overwrite=False, struct=None):
-        """ Create a new PDB file containing only the specified chains.
-
-        Returns the path to the created file.
-
-        :param pdb_path: path to the crystal structure
-        :param pdb_id: pdb_id
-        :param chain_letters: iterable of chain characters (case insensitive)
-        :param overwrite: write over the output file if it exists
-        """
-        #print(chain_letters)
-        chain_letters = [chain.upper() for chain in chain_letters]
-
-        # Input/output files
-        full_pdb_id = 'pdb{}.ent'.format(pdb_id)
-        out_name = "pdb{}.ent".format(pdb_id)
-        out_path = os.path.join(self.out_dir, out_name)
-
-
-        print("OUT PATH:", out_path)
-        plural = "s" if (len(chain_letters) > 1) else ""  # for printing
-
-        # Skip PDB generation if the file already exists
-        if (not overwrite) and (os.path.isfile(out_path)):
-            print("Chain%s %s of '%s' already extracted to '%s'." %
-                  (plural, ", ".join(chain_letters), full_pdb_id, out_name))
-            return out_path
-
-        print("Extracting chain%s %s from %s..." % (plural,
-                                                    ", ".join(chain_letters), pdb_id))
-
-        # Get structure, write new file with only given chains
-        if struct is None:
-            struct = self.parser.get_structure(full_pdb_id, os.path.join(pdb_path, full_pdb_id))
-        self.writer.set_structure(struct)
-        self.writer.save(out_path, select=SelectChains(chain_letters))
-
-        return out_path
-
-
-chaindict = {'A':'alpha', 'B':'beta'}
-
-pdbs = get_chains(file, var=2)
 
 
 def rewrite_chain(inpfile, inpchains, outchains):
@@ -135,11 +72,22 @@ def rewrite_chain(inpfile, inpchains, outchains):
             out.writelines(chain_dict[chain])
 
 
-
-def get_splitted_pdbs(pdb_path=pdbfiles, type_chains='all', pdbs=pdbs):
+def get_splitted_pdbs(pdb_path=PATH_TO_PDB, type_chains='all', pdbs=pdbs):
+    """
+    This script will change structures from pdbs: it will get specific chains from pdb file and rename them:
+    A – TCRalpha
+    B – TCRbeta
+    C – antigen
+    D – MHCa
+    E – MHCe
+    :param pdb_path:
+    :param type_chains:
+    :param pdbs:
+    :return:
+    """
     print('Working with {}'.format(type_chains))
     complex_type = complex_type_options(type_chains)
-    splitter = ChainSplitter(out_dir='{}_PDBs'.format(type_chains))
+    splitter = PDBSplitter(out_dir='{}_PDBs'.format(type_chains))
     for pdb in pdbs:
         w_chains = ''
         to_change = ''
@@ -157,9 +105,9 @@ def get_splitted_pdbs(pdb_path=pdbfiles, type_chains='all', pdbs=pdbs):
                     to_change += 'D'
                 elif chain is 'chain_mhc_b':
                     to_change += 'E'
-        outpdb = splitter.make_pdb(pdb_path=pdb_path, pdb_id=pdb, chain_letters=w_chains, overwrite=True)
+        outpdb = splitter.split_by_chains(pdb_path=pdb_path, pdb_id='pdb{}.ent'.format(pdb), chain_letters=w_chains, overwrite=True, outfile_name='pdb{}.ent'.format(pdb))
         rewrite_chain(outpdb, w_chains, to_change)
 
 
-for type_chains in ['all', 'tcr.alpha.mhc', 'tcr.beta.mhc']:
-    get_splitted_pdbs(pdbfiles, type_chains, pdbs)
+#for type_chains in ['all', 'tcr.alpha.mhc', 'tcr.beta.mhc']:
+#    get_splitted_pdbs(PATH_TO_PDB, type_chains, pdbs)
