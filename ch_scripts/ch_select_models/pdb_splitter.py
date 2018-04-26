@@ -87,7 +87,7 @@ class PDBSplitter:
 
     def split_by_region(self, pdb_path, pdb_id, chain, region_start, region_end, overwrite=False, struct=None, outfile_name='pdb.outfile.ent'):
         """
-
+        Get PDB with specific region from chain
         :param pdb_path: path to the crystal structure
         :param pdb_id: pdb_id
         :param chain: chain id
@@ -116,7 +116,7 @@ class PDBSplitter:
 
 def split_tcr(pdb_id, tcr_info, pdbdir, outdir):
     """
-     This script will split tcr by regions written in tcr_info
+     This function will split tcr by regions written in tcr_info
     :param pdb_id: name of pdb file
     :param tcr_info: dictionary with structure {chain:{region:[region_start, region_end]}}
     :param pdbdir: path to input pdb
