@@ -2,7 +2,7 @@ from Bio import PDB
 from Bio.PDB.PDBIO import Select
 from ch_base import *
 
-# code from stackoverflow
+# modified code from stackoverflow
 
 class SelectChains(PDB.Select):
     """ Only accept the specified chains when saving. """
@@ -116,7 +116,7 @@ class PDBSplitter:
 
 def split_tcr(pdb_id, tcr_info, pdbdir, outdir):
     """
-     This function will split tcr by regions written in tcr_info
+     Split tcr by regions written in tcr_info
     :param pdb_id: name of pdb file
     :param tcr_info: dictionary with structure {chain:{region:[region_start, region_end]}}
     :param pdbdir: path to input pdb
