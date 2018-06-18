@@ -1,0 +1,11 @@
+alpha_beta_clusters	count
+10A|6B	1
+13A|5B	2
+13A|6B	8
+13A|8B	1
+1A|6B	11
+3A|6B	3
+4A|1B	4
+4A|6B	1
+6A|8B	3
+9A|6B	1

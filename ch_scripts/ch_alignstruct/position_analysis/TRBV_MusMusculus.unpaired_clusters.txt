@@ -1,0 +1,5 @@
+cluster	count
+1B	4
+5B	2
+6B	25
+8B	4

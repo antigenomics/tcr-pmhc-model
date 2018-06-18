@@ -1,0 +1,8 @@
+cluster	count
+10A	1
+13A	11
+1A	11
+3A	3
+4A	5
+6A	3
+9A	1
