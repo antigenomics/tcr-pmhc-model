@@ -48,10 +48,17 @@ def write_aa_sequences(inpfile='tcr_genes.txt', outfile='tcr_aa_sequences.txt', 
 
 
 class tcr_constuctor():
-    def __init__(self):
+    def __init__(self,
+                 vj_sequences_file='tcr_aa_sequences.txt',
+                 c_sequences_file='constant.txt',
+                 segments_file='segments.aaparts.txt'):
+
         self.tcr_dict = None
         self.c_dict = None
         self.segments = None
+        self.vj_sequences_file = vj_sequences_file
+        self.c_sequences_file = c_sequences_file
+        self.segments_file = segments_file
 
     def get_tcr_dict(self):
         return self.tcr_dict
@@ -63,13 +70,13 @@ class tcr_constuctor():
         return self.segments
 
     #set tcr_dict
-    def set_tcr_genes(self, inpfile='tcr_aa_sequences.txt'):
+    def set_tcr_genes(self):
         if self.tcr_dict is not None:
             return
 
         self.tcr_dict = {}
 
-        with open(inpfile, 'r') as inp:
+        with open(self.vj_sequences_file, 'r') as inp:
             reader = csv.DictReader(inp, delimiter='\t')
             for row in reader:
                 if row['#species'] not in self.tcr_dict:
@@ -77,11 +84,11 @@ class tcr_constuctor():
                 self.tcr_dict[row['#species']][row['id']] = row['sequence']
 
     #set c_dict
-    def set_c_genes(self, inpfile='constant.txt'):
+    def set_c_genes(self):
         if self.c_dict is not None:
             return
         self.c_dict = {}
-        with open(inpfile, 'r') as inp:
+        with open(self.c_sequences_file, 'r') as inp:
             reader = csv.DictReader(inp, delimiter='\t')
             for row in reader:
                 if row['species'] not in self.c_dict:
@@ -89,10 +96,10 @@ class tcr_constuctor():
                 self.c_dict[row['species']][row['c.id']] = row['c.seq']
 
     #set segments from https://github.com/antigenomics/vdjdb-db/blob/master/res/segments.aaparts.txt
-    def set_segment_prediction(self, inpfile='segments.aaparts.txt'):
+    def set_segment_prediction(self):
         if self.segments is not None:
             return
-        self.segments = pd.read_table(inpfile)
+        self.segments = pd.read_table(self.segments_file)
 
     #predict v/j genes using cdr3 sequence
     def predict_segment(self, cdr3, chain_type, gene_type, specie):
@@ -151,28 +158,7 @@ class tcr_constuctor():
         return self.tcr_dict[specie][v_gene][:-1] + cdr3 + j_seq + c_seq
 
 
-tcr_maker = tcr_constuctor()
-print(tcr_maker.get_tcr(cdr3='CVVNSPNDYKLSF', specie='HomoSapiens', add_c=True, try_to_predict_missing=True, chain_type='TRA', force=True))
-#def get_tcr_genes(inpfile='tcr_aa_sequences.txt'):
-#    tcr_dict = {}
-#    with open(inpfile, 'r') as inp:
-#        reader = csv.DictReader(inp, delimiter='\t')
-#        for row in reader:
-#            if row['#species'] not in tcr_dict:
-#                tcr_dict[row['#species']] = {}
-#            tcr_dict[row['#species']][row['id']] = row['sequence']
-#    return(tcr_dict)
-#
-#
-#tcr_dict = get_tcr_genes()
-
-
-#def get_tcr(v_gene, j_gene, cdr3, species, tcr_dict=tcr_dict, add_c=False):
-#    if j_gene == '':
-#        return(tcr_dict[species][v_gene][:-1]+cdr3)
-#    c_gene = ''
-#    if add_c is True:
-#
-#    else:
-#        return(tcr_dict[species][v_gene][:-1]+cdr3+tcr_dict[species][j_gene][1:]+c_gene)
+#USAGE:
+#tcr_maker = tcr_constuctor()
+#print(tcr_maker.get_tcr(cdr3='CVVNSPNDYKLSF', specie='HomoSapiens', add_c=True, try_to_predict_missing=True, chain_type='TRA', force=True))
 
