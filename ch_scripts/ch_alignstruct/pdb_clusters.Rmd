@@ -23,9 +23,13 @@ select = dplyr::select
 hs.unpaired.alpha = fread('position_analysis/TRAV_HomoSapiens.unpaired.txt')
 hs.unpaired.beta = fread('position_analysis/TRBV_HomoSapiens.unpaired.txt')
 ```
+```{r}
+hs.unpaired.alpha
+```
 
 ```{r, fig.width=8}
-ggplot(data = hs.unpaired.alpha %>% group_by(cluster) %>% mutate(totsum = sum(count)), aes(cluster, totsum)) + 
+ggplot(data = hs.unpaired.alpha %>% group_by(cluster) %>% mutate(totsum = sum(count)), 
+       aes(cluster, hs.unpaired.alpha$count)) + 
   geom_bar(position='stack', aes(fill=id), stat='identity', show.legend = F) +
   geom_text(aes(label=id), position = position_stack(vjust=0.5)) +
   theme_bw() + 
@@ -38,13 +42,13 @@ ggplot(data = hs.unpaired.alpha %>% group_by(cluster) %>% mutate(totsum = sum(co
         axis.title=element_text(size=20), 
         plot.title=element_text(size=28),
         plot.subtitle=element_text(size=21))
-```
-```{r}
+
 ggsave('TRAV_HomoSapiens.unpaired.png')
 ```
 
 ```{r, fig.width=8}
-ggplot(data = hs.unpaired.beta %>% group_by(cluster) %>% mutate(totsum = sum(count)), aes(cluster, totsum)) + 
+ggplot(data = hs.unpaired.beta %>% group_by(cluster) %>% mutate(totsum = sum(count)), 
+       aes(cluster, hs.unpaired.alpha$count)) + 
   geom_bar(position='stack', aes(fill=id), stat='identity', show.legend = F) +
   geom_text(aes(label=id), position = position_stack(vjust=0.5)) +
   theme_bw() +
@@ -57,8 +61,7 @@ ggplot(data = hs.unpaired.beta %>% group_by(cluster) %>% mutate(totsum = sum(cou
         axis.title=element_text(size=20), 
         plot.title=element_text(size=28),
         plot.subtitle=element_text(size=21))
-```
-```{r}
+
 ggsave('TRBV_HomoSapiens.unpaired.png')
 ```
 
@@ -69,7 +72,7 @@ hs.paired = fread('position_analysis/TRV_HomoSapiens.paired.txt')
 
 
 ```{r, fig.width=8}
-ggplot(data = hs.paired %>% group_by(alpha_beta_clusters) %>% mutate(totsum = sum(count)), aes(alpha_beta_clusters, totsum)) + 
+ggplot(data = hs.paired %>% group_by(alpha_beta_clusters) %>% mutate(totsum = sum(count)), aes(alpha_beta_clusters, hs.paired$count)) + 
   #facet_grid(~cluster) +
   geom_bar(position='stack', aes(fill=alpha_beta_clusters), stat='identity', show.legend = F) +
   #geom_text(aes(label=alpha_beta), position = position_stack(vjust=0.5)) +
@@ -81,10 +84,9 @@ ggplot(data = hs.paired %>% group_by(alpha_beta_clusters) %>% mutate(totsum = su
         y="Number of structures") +
     theme(axis.text=element_text(size=8.5),
         axis.title=element_text(size=20), 
+        axis.text.y=element_text(size=20),
         plot.title=element_text(size=28),
         plot.subtitle=element_text(size=21))
-```
 
-```{r}
 ggsave('TRV_HomoSapiens.paired.png')
 ```
