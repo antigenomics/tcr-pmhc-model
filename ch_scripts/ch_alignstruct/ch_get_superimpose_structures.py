@@ -1,6 +1,7 @@
 import os
 import sys
 import Bio.PDB
+import Bio.pairwise2
 from ch_base import *
 
 
@@ -24,6 +25,7 @@ def get_structure_and_model(inppath, type):
 def get_atoms_from_chain(model, chain):
     atoms = []
     for res in model[chain]:
+        print(res)
         if res.get_id()[0] == ' ':
             atoms.append(res['CA'])
     return atoms
@@ -82,9 +84,21 @@ def superimpose_(pdbdict, outpath, overwrite=True):
                     break
 
 
+
+def get_pdb_sequence(model, chain):
+    pass
+
+
+def find_positions(positions, pdb_sequence, gene_sequence, gene_positions):
+    pass
+
+
 #refstructure, refmodel = get_structure_and_model(os.path.join(BASE_HOMEDIR, 'ch_scripts/ch_select_models/all_PDBs/pdb1ao7.ent'), 'reference')
 #samplestructure, samplemodel = get_structure_and_model(os.path.join(BASE_HOMEDIR, 'ch_scripts/ch_select_models/all_PDBs/pdb3h9s.ent'), 'sample')
-#refatoms_a, refatoms_b = get_atoms_from_chain(refmodel, 'A'), get_atoms_from_chain(refmodel, 'B')
+#refatoms_a = get_atoms_from_chain(refmodel, 'A')
+#refatoms_b = get_atoms_from_chain(refmodel, 'B')
+
+#print(refatoms_a[0])
 #refatoms = select_surrounding_atoms(refatoms_a, (87, 100), 10) + select_surrounding_atoms(refatoms_b, (88, 104), 10)
 
 #sampleatoms_a, sampleatoms_b = get_atoms_from_chain(samplemodel, 'A'), get_atoms_from_chain(samplemodel, 'B')
