@@ -29,9 +29,9 @@ hs.unpaired.alpha
 
 ```{r, fig.width=8}
 ggplot(data = hs.unpaired.alpha %>% group_by(cluster) %>% mutate(totsum = sum(count)), 
-       aes(cluster, hs.unpaired.alpha$count)) + 
-  geom_bar(position='stack', aes(fill=id), stat='identity', show.legend = F) +
-  geom_text(aes(label=id), position = position_stack(vjust=0.5)) +
+       aes(cluster, count)) + 
+  geom_col(aes(fill = id), show.legend = F) +
+  geom_text(aes(label = id, group = id), position = position_stack(vjust = 0.5)) +
   theme_bw() + 
   labs(title="V gene representation in structures",
         subtitle=paste0("specie: ", "HomoSapiens",
@@ -43,15 +43,15 @@ ggplot(data = hs.unpaired.alpha %>% group_by(cluster) %>% mutate(totsum = sum(co
         plot.title=element_text(size=28),
         plot.subtitle=element_text(size=21))
 
-ggsave('TRAV_HomoSapiens.unpaired.png')
+#ggsave('TRAV_HomoSapiens.unpaired.png')
 ```
 
 ```{r, fig.width=8}
 ggplot(data = hs.unpaired.beta %>% group_by(cluster) %>% mutate(totsum = sum(count)), 
        aes(cluster, hs.unpaired.alpha$count)) + 
-  geom_bar(position='stack', aes(fill=id), stat='identity', show.legend = F) +
-  geom_text(aes(label=id), position = position_stack(vjust=0.5)) +
-  theme_bw() +
+  geom_col(aes(fill = id), show.legend = F) +
+  geom_text(aes(label = id, group = id), position = position_stack(vjust = 0.5)) +
+  theme_bw() + 
   labs(title="V gene representation in structures",
         subtitle=paste0("specie: ", "HomoSapiens",
                        "; chain: ", "beta"),
@@ -62,7 +62,7 @@ ggplot(data = hs.unpaired.beta %>% group_by(cluster) %>% mutate(totsum = sum(cou
         plot.title=element_text(size=28),
         plot.subtitle=element_text(size=21))
 
-ggsave('TRBV_HomoSapiens.unpaired.png')
+#ggsave('TRBV_HomoSapiens.unpaired.png')
 ```
 
 ```{r}
@@ -74,7 +74,7 @@ hs.paired = fread('position_analysis/TRV_HomoSapiens.paired.txt')
 ```{r, fig.width=8}
 ggplot(data = hs.paired %>% group_by(alpha_beta_clusters) %>% mutate(totsum = sum(count)), aes(alpha_beta_clusters, hs.paired$count)) + 
   #facet_grid(~cluster) +
-  geom_bar(position='stack', aes(fill=alpha_beta_clusters), stat='identity', show.legend = F) +
+  geom_col(aes(fill=alpha_beta_clusters), color='black', show.legend = F) +
   #geom_text(aes(label=alpha_beta), position = position_stack(vjust=0.5)) +
   theme_bw() +
   labs(title="V gene representation in structures",
@@ -88,5 +88,5 @@ ggplot(data = hs.paired %>% group_by(alpha_beta_clusters) %>% mutate(totsum = su
         plot.title=element_text(size=28),
         plot.subtitle=element_text(size=21))
 
-ggsave('TRV_HomoSapiens.paired.png')
+#ggsave('TRV_HomoSapiens.paired.png')
 ```
