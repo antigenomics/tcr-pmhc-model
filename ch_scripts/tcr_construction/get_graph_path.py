@@ -179,4 +179,4 @@ def find_graph_path_dijkstra(cluster_path="path_finder/clusters.txt",
                                                                 "to.v", "to.j",
                                                                 "cid"])
     #"""
-find_graph_path_dijkstra(threshold_size=1)
+find_graph_path_dijkstra(threshold_size=5)
