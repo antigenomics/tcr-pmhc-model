@@ -1,16 +1,25 @@
 import csv
 import warnings
 
+from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio.Alphabet import generic_dna
 import pandas as pd
 
 
+#those nucleotides will be added to J segment when function translate_aa_seq is used.
+two_c_nucleotides_dict = {"homosapiens":{"TRAC": "AT", "TRBC": "AG", "TRGC": "AT", "TRDC": "GA"},
+                     "musmusculus":{"TRAC": "AC", "TRBC": "AG", "TRGC": "AC", "TRDC": "AA"},
+                     "macacamulatta":{"TRAC" :"AT", "TRBC": "AG", "TRGC": "!!!!!!!!!", "TRDC": "AA"}} #will cause errors. There is no TRGC for macacamulatta in imgt
+
+
 #get aminoacid sequence for V/J
-def translate_aa_seq(nucleotide_sequence, reference_point, segment_type):
+def translate_aa_seq(nucleotide_sequence, reference_point, segment_type, specie, gene):
     try:
         if segment_type in ('J', 'Joining'):
-            coding_dna = Seq(nucleotide_sequence[reference_point+1:], generic_dna)
+            coding_dna = Seq(nucleotide_sequence[reference_point+1:] +
+                             two_c_nucleotides_dict[specie.lower()]["{}C".format(gene[:3])],
+                             generic_dna)
         elif segment_type in ('V', 'Variable'):
             coding_dna = Seq(nucleotide_sequence[:reference_point], generic_dna)
         else:
@@ -38,7 +47,8 @@ def write_aa_sequences(inpfile='tcr_genes.txt', outfile='tcr_aa_sequences.txt', 
             for row in reader:
                 if row['#species'] not in ('MusMusculus', 'HomoSapiens'):
                     continue
-                row['sequence'] = translate_aa_seq(row['sequence'], int(row['reference_point']), row['segment'])
+                row['sequence'] = translate_aa_seq(row['sequence'], int(row['reference_point']), row['segment'],
+                                                   row['#species'], row["id"])
 
                 for pos in cdr_names:
                     if int(row[pos]) > -1:
@@ -47,17 +57,16 @@ def write_aa_sequences(inpfile='tcr_genes.txt', outfile='tcr_aa_sequences.txt', 
                 writer.writerow({key: row[key] for key in out_columns})
 
 
-class tcr_constuctor():
+class tcr_constructor():
     def __init__(self,
-                 vj_sequences_file='tcr_aa_sequences.txt',
-                 c_sequences_file='constant.txt',
+                 vj_sequences_file,
+                 c_sequences_file,
                  segments_file='segments.aaparts.txt'):
-
         self.tcr_dict = None
         self.c_dict = None
-        self.segments = None
         self.vj_sequences_file = vj_sequences_file
         self.c_sequences_file = c_sequences_file
+        self.segments = None
         self.segments_file = segments_file
 
     def get_tcr_dict(self):
@@ -66,10 +75,7 @@ class tcr_constuctor():
     def get_c_dict(self):
         return self.c_dict
 
-    def get_segments(self):
-        return self.segments
-
-    #set tcr_dict
+    # set tcr_dict
     def set_tcr_genes(self):
         if self.tcr_dict is not None:
             return
@@ -95,18 +101,22 @@ class tcr_constuctor():
                     self.c_dict[row['species']] = {}
                 self.c_dict[row['species']][row['c.id']] = row['c.seq']
 
-    #set segments from https://github.com/antigenomics/vdjdb-db/blob/master/res/segments.aaparts.txt
+    def get_segments(self):
+        return self.segments
+
+    # set segments from https://github.com/antigenomics/vdjdb-db/blob/master/res/segments.aaparts.txt
     def set_segment_prediction(self):
         if self.segments is not None:
             return
         self.segments = pd.read_table(self.segments_file)
 
-    #predict v/j genes using cdr3 sequence
+    # predict v/j genes using cdr3 sequence
     def predict_segment(self, cdr3, chain_type, gene_type, specie):
         if chain_type is None:
             raise TypeError('chain_type must be str')
         self.set_segment_prediction()
-        w_segments = self.segments[(self.segments['species'] == specie) & (self.segments['gene'] == chain_type) & (self.segments['type'] == gene_type)]
+        w_segments = self.segments[(self.segments['species'] == specie) & (self.segments['gene'] == chain_type) & (
+                    self.segments['type'] == gene_type)]
         while len(cdr3) > 0:
             if len(w_segments[w_segments['cdr3'] == cdr3]) > 0:
                 return str(w_segments[w_segments['cdr3'] == cdr3]['segm'].reset_index(drop=True)[0]) + '*01'
@@ -116,19 +126,28 @@ class tcr_constuctor():
                 cdr3 = cdr3[:-1]
         return None
 
+
+class tcr_aminoacid_constuctor(tcr_constructor):
+    def __init__(self,
+                 vj_sequences_file='tcr_aa_sequences.txt',
+                 c_sequences_file='constant.txt',
+                 segments_file='segments.aaparts.txt'):
+        tcr_constructor.__init__(self, vj_sequences_file, c_sequences_file)
+
+
     def get_tcr(self, cdr3, specie, v_gene=None, j_gene=None, add_c=False,
                 try_to_predict_missing=False, chain_type=None, force=False):
         """
         get tcr sequence based on specie, cdr3, v_gene and j_genes
         :param cdr3: str; cdr3 sequence
         :param specie: str; specie name (HomoSapiens, MacacaMulatta, MusMusculus)
-        :param v_gene: str; V segment
-        :param j_gene: str; J segment
+        :param v_gene: str; V segment with *01 at the end
+        :param j_gene: str; J segment with *01 at the end
         :param add_c: True/False; if True, constant region will be added
         :param try_to_predict_missing: True/False; if True, then missing v_gene and j_gene
         will be predicted based on cdr3 sequence. if True, then chain_type is needed.
         :param chain_type: str; TRA/TRB
-        :param force: TRUE/FALSE; if True, then tcrs without v_gene won't stop calculations; tcrs with missing
+        :param force: TRUE/FALSE; if True, then tcrs without v_gene won't result in stopped calculations; tcrs with missing
         v segment will have "NO_V_SEGMENT_FOUND" sequences
         :return: str; tcr sequence
         """
@@ -137,7 +156,7 @@ class tcr_constuctor():
         if v_gene is None:
             if try_to_predict_missing is True:
                 v_gene = self.predict_segment(cdr3, chain_type, 'V', specie)
-            if v_gene is None and force == True:
+            if v_gene is None and force is True:
                 return "NO_V_SEGMENT_FOUND"
 
         j_seq = ''
@@ -151,14 +170,87 @@ class tcr_constuctor():
         if add_c is True:
             self.set_c_genes()
             if j_gene[2] == 'B':
-                c_seq = self.c_dict[specie]['TRBC{}'.format(j_gene[4])]
+                c_seq = self.c_dict[specie]['TRBC{}*01'.format(j_gene[4])]
             else:
-                c_seq = self.c_dict[specie]['TRAC']
+                c_seq = self.c_dict[specie]['TRAC*01']
 
         return self.tcr_dict[specie][v_gene][:-1] + cdr3 + j_seq + c_seq
 
 
 #USAGE:
 #tcr_maker = tcr_constuctor()
+#
 #print(tcr_maker.get_tcr(cdr3='CVVNSPNDYKLSF', specie='HomoSapiens', add_c=True, try_to_predict_missing=True, chain_type='TRA', force=True))
 
+class tcr_nucleotide_constuctor(tcr_constructor):
+    def __init__(self,
+                 vj_sequences_file='tcr_genes.txt',
+                 c_sequences_file='constant.nucleotide.txt'):
+        tcr_constructor.__init__(self, vj_sequences_file, c_sequences_file)
+        self.cdr3points = None
+
+    def set_tcr_genes(self):
+        if self.tcr_dict is not None:
+            return
+
+        self.tcr_dict = {}
+
+        with open(self.vj_sequences_file, 'r') as inp:
+            reader = csv.DictReader(inp, delimiter='\t')
+            for row in reader:
+                if row['#species'] not in self.tcr_dict:
+                    self.tcr_dict[row['#species']] = {}
+                self.tcr_dict[row['#species']][row['id']] = (row['sequence'], int(row['reference_point']))
+
+
+    def get_cdr3_nucleotide_sequence(self, cdr3):
+        return "N"*len(cdr3)*3
+
+    def get_tcr(self, cdr3, specie, cdr3vend=1, cdr3jstart=0, v_gene=None, j_gene=None, add_c=False,
+                try_to_predict_missing=False, chain_type=None, force=False):
+        """
+        get tcr sequence based on specie, cdr3, v_gene and j_genes
+        :param cdr3: str; cdr3 aminoacid sequence
+        :param specie: str; specie name (HomoSapiens, MacacaMulatta, MusMusculus)
+        :param cdr3vend: int; part of v-gene, that is used in cdr3 plus one (in aminoacids)
+        :param cdr3jstart: int; part of j-gene, that is used in cdr3 (in aminoacids)
+        :param v_gene: str; V segment with *01 at the end
+        :param j_gene: str; J segment with *01 at the end
+        :param add_c: True/False; if True, constant region will be added
+        :param try_to_predict_missing: True/False; if True, then missing v_gene and j_gene
+        will be predicted based on cdr3 sequence. if True, then chain_type is needed.
+        :param chain_type: str; TRA/TRB
+        :param force: TRUE/FALSE; if True, then tcrs without v_gene won't result in stopped calculations; tcrs with missing
+        v segment will have "NO_V_SEGMENT_FOUND" sequences
+        :return: str; tcr sequence
+        """
+        self.set_tcr_genes()
+
+        if v_gene is None:
+            if try_to_predict_missing is True:
+                v_gene = self.predict_segment(cdr3, chain_type, 'V', specie)
+            if v_gene is None and force is True:
+                return "NO_V_SEGMENT_FOUND"
+        v_info = self.tcr_dict[specie][v_gene]
+        v_point = v_info[1]
+        v_seq = v_info[0][:v_point+3*(cdr3vend-1)]
+
+        j_seq = ''
+        if j_gene is None and try_to_predict_missing is True:
+            j_gene = self.predict_segment(cdr3, chain_type, 'J', specie)
+
+        if j_gene is not None:
+            j_info = self.tcr_dict[specie][j_gene]
+            j_point = j_info[1]
+            print(j_point)
+            j_seq = j_info[0][(j_point+1)-3*(cdr3jstart-1):]
+
+        c_seq = ''
+        if add_c is True:
+            self.set_c_genes()
+            if j_gene[2] == 'B':
+                c_seq = self.c_dict[specie]['TRBC{}*01'.format(j_gene[4])]
+            else:
+                c_seq = self.c_dict[specie]['TRAC*01']
+
+        return v_seq + self.get_cdr3_nucleotide_sequence(cdr3[cdr3vend:-cdr3jstart]) + j_seq + c_seq[1:]
