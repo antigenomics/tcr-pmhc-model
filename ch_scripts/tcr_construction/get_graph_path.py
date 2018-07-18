@@ -96,6 +96,25 @@ def pipeline(folder="path_finder", overwrite=False):
         print("Done\n")
 
 
+def tuple_maker(df, col1, col2, tuplecol):
+    def gettuple(a, b):
+        return sorted((a, b))
+
+    df[tuplecol] = df.apply(lambda col: gettuple(col[col1], col[col2]), axis=1)
+    return df
+
+
+def tuple_maker2(df, tuplecol, *values):
+    print(*values)
+    def gettuple(*values):
+        return sorted(*values)
+
+    df[tuplecol] = df.apply(lambda col: gettuple(list(map(col, *values))), axis=1)
+    return df
+
+
+
+
 def find_graph_path_dijkstra(cluster_path="path_finder/clusters.txt",
                              inpgraph_path="path_finder/graph.txt",
                              outputinfo_path="path_finder/graph_path.info.txt",
@@ -179,4 +198,4 @@ def find_graph_path_dijkstra(cluster_path="path_finder/clusters.txt",
                                                                 "to.v", "to.j",
                                                                 "cid"])
     #"""
-find_graph_path_dijkstra(threshold_size=5)
+#find_graph_path_dijkstra(threshold_size=5)
