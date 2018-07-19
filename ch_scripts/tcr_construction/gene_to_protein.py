@@ -127,7 +127,7 @@ class tcr_constructor():
         return None
 
 
-class tcr_aminoacid_constuctor(tcr_constructor):
+class tcr_aminoacid_constructor(tcr_constructor):
     def __init__(self,
                  vj_sequences_file='tcr_aa_sequences.txt',
                  c_sequences_file='constant.txt',
@@ -136,7 +136,7 @@ class tcr_aminoacid_constuctor(tcr_constructor):
 
 
     def get_tcr(self, cdr3, specie, v_gene=None, j_gene=None, add_c=False,
-                try_to_predict_missing=False, chain_type=None, force=False):
+                try_to_predict_missing=False, chain_type=None, force=False, seqlengths=False):
         """
         get tcr sequence based on specie, cdr3, v_gene and j_genes
         :param cdr3: str; cdr3 sequence
@@ -149,6 +149,7 @@ class tcr_aminoacid_constuctor(tcr_constructor):
         :param chain_type: str; TRA/TRB
         :param force: TRUE/FALSE; if True, then tcrs without v_gene won't result in stopped calculations; tcrs with missing
         v segment will have "NO_V_SEGMENT_FOUND" sequences
+        :param seqlengths: TRUE/FALSE; if True, then in return you will get tuple with tcr sequence and lengths of v_gene, cdr3, j_gene and c_gene
         :return: str; tcr sequence
         """
         self.set_tcr_genes()
@@ -174,15 +175,18 @@ class tcr_aminoacid_constuctor(tcr_constructor):
             else:
                 c_seq = self.c_dict[specie]['TRAC*01']
 
-        return self.tcr_dict[specie][v_gene][:-1] + cdr3 + j_seq + c_seq
-
+        ret_tcr = (self.tcr_dict[specie][v_gene][:-1], cdr3, j_seq, c_seq)
+        if seqlengths is False:
+            return "".join(ret_tcr)
+        elif seqlengths is True:
+            return "".join(ret_tcr), (*map(len, ret_tcr))
 
 #USAGE:
 #tcr_maker = tcr_constuctor()
 #
 #print(tcr_maker.get_tcr(cdr3='CVVNSPNDYKLSF', specie='HomoSapiens', add_c=True, try_to_predict_missing=True, chain_type='TRA', force=True))
 
-class tcr_nucleotide_constuctor(tcr_constructor):
+class tcr_nucleotide_constructor(tcr_constructor):
     def __init__(self,
                  vj_sequences_file='tcr_genes.txt',
                  c_sequences_file='constant.nucleotide.txt'):
@@ -202,12 +206,11 @@ class tcr_nucleotide_constuctor(tcr_constructor):
                     self.tcr_dict[row['#species']] = {}
                 self.tcr_dict[row['#species']][row['id']] = (row['sequence'], int(row['reference_point']))
 
-
     def get_cdr3_nucleotide_sequence(self, cdr3):
         return "N"*len(cdr3)*3
 
     def get_tcr(self, cdr3, specie, cdr3vend=1, cdr3jstart=0, v_gene=None, j_gene=None, add_c=False,
-                try_to_predict_missing=False, chain_type=None, force=False):
+                try_to_predict_missing=False, chain_type=None, force=False, seqlengths=False):
         """
         get tcr sequence based on specie, cdr3, v_gene and j_genes
         :param cdr3: str; cdr3 aminoacid sequence
@@ -222,10 +225,14 @@ class tcr_nucleotide_constuctor(tcr_constructor):
         :param chain_type: str; TRA/TRB
         :param force: TRUE/FALSE; if True, then tcrs without v_gene won't result in stopped calculations; tcrs with missing
         v segment will have "NO_V_SEGMENT_FOUND" sequences
+        :param seqlengths: TRUE/FALSE; if True, then in return you will get tuple with tcr sequence and lengths of v_gene, cdr3, j_gene and c_gene
         :return: str; tcr sequence
         """
         self.set_tcr_genes()
 
+
+        if cdr3vend < 0:
+            cdr3vend = 1
         if v_gene is None:
             if try_to_predict_missing is True:
                 v_gene = self.predict_segment(cdr3, chain_type, 'V', specie)
@@ -242,8 +249,8 @@ class tcr_nucleotide_constuctor(tcr_constructor):
         if j_gene is not None:
             j_info = self.tcr_dict[specie][j_gene]
             j_point = j_info[1]
-            print(j_point)
-            j_seq = j_info[0][(j_point+1)-3*(cdr3jstart-1):]
+            j_seq = j_info[0][(j_point+1)-3*(len(cdr3) - cdr3jstart - 1):] #(-1) - for last F;
+            #print(j_info[0], j_point, j_point+1, 3*(len(cdr3)- cdr3jstart-1))
 
         c_seq = ''
         if add_c is True:
@@ -253,4 +260,19 @@ class tcr_nucleotide_constuctor(tcr_constructor):
             else:
                 c_seq = self.c_dict[specie]['TRAC*01']
 
-        return v_seq + self.get_cdr3_nucleotide_sequence(cdr3[cdr3vend:-cdr3jstart]) + j_seq + c_seq[1:]
+        ret_tcr = (v_seq, self.get_cdr3_nucleotide_sequence(cdr3[cdr3vend:cdr3jstart]), j_seq, c_seq[1:])
+        #print(ret_tcr)
+        if seqlengths is False:
+            return "".join(ret_tcr)
+        elif seqlengths is True:
+            return "".join(ret_tcr), (*map(len, ret_tcr))
+
+
+#tcr_n_constructor = tcr_nucleotide_constructor()
+#tcr_a_constructor = tcr_aminoacid_constructor()
+#tcr_construct = tcr_n_constructor.get_tcr("CASSLAPGATNEKLFF", "HomoSapiens", 5, 9, "TRBV7-6*01", "TRBJ1-4*01", add_c=True, seqlengths=True)
+#tcr_aminoacid = tcr_a_constructor.get_tcr("CASSLAPGATNEKLFF", "HomoSapiens", "TRBV7-6*01", "TRBJ1-4*01", add_c=True, seqlengths=True)
+#
+#print(tcr_construct[0])
+#print(Seq(tcr_construct[0], generic_dna).translate())
+#print(tcr_aminoacid[0])
