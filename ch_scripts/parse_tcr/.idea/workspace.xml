@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f98bbc49-ccc1-4f0b-a103-cac18e9b5e90" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="cut_c_domain.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cut_c_domain.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="28" column="92" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aminoacid_HomoSapiens_Constant_sequences_splitted_for_pdb.fasta" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/aminoacid_HomoSapiens_Constant_sequences_splitted_for_pdb.fasta">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aminoacid_HomoSapiens_Joining_sequences.fasta" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/aminoacid_HomoSapiens_Joining_sequences.fasta">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="aminoacid_HomoSapiens_Variable_sequences.fasta" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/aminoacid_HomoSapiens_Variable_sequences.fasta">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="28" selection-start-line="2" selection-end-line="2" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nucleotide_HomoSapiens_Variable_sequences.fasta" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/nucleotide_HomoSapiens_Variable_sequences.fasta">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parse_tcr.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/igblast/parse_tcr.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-45">
+              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MOUSE_PDB_TCRA_parsed.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MOUSE_PDB_TCRA_parsed.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="32" column="52" lean-forward="true" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_tcr_human.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_tcr_human.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aminoacid_MusMusculus_Constant_sequences_splitted_for_pdb.fasta" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence_db/musmusculus/aminoacid_MusMusculus_Constant_sequences_splitted_for_pdb.fasta">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="60" selection-start-line="8" selection-end-line="8" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aminoacid_HomoSapiens_Constant_sequences.fasta" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/aminoacid_HomoSapiens_Constant_sequences.fasta">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Query</find>
+      <find>print</find>
+      <find>NAKSGRYSVNFKKAAKSVALTISALQLEDSAKYF</find>
+      <find>Identities</find>
+      <find>91</find>
+      <find>90</find>
+      <find>/90</find>
+      <find>/91</find>
+      <find>AKPVTQIVSAEAWGRAD</find>
+      <find>129</find>
+      <find>inpfile</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/igblast_seq.py" />
+        <option value="$PROJECT_DIR$/process_imgt_sequences.py" />
+        <option value="$PROJECT_DIR$/parse_tcr.py" />
+        <option value="$PROJECT_DIR$/test_tcr_human.txt" />
+        <option value="$PROJECT_DIR$/igblast/igblast_seq.py" />
+        <option value="$PROJECT_DIR$/shch_fasta_parse.py" />
+        <option value="$PROJECT_DIR$/makeblastdb_sequences.py" />
+        <option value="$PROJECT_DIR$/igblast/parse_tcr.py" />
+        <option value="$PROJECT_DIR$/find_longest_c_domain.py" />
+        <option value="$PROJECT_DIR$/cut_c_domain.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="156" />
+    <option name="y" value="121" />
+    <option name="width" value="1482" />
+    <option name="height" value="1011" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="parse_tcr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="parse_tcr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parse_tcr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="parse_tcr" type="462c0819:PsiDirectoryNode" />
+              <item name="igblast" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parse_tcr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="parse_tcr" type="462c0819:PsiDirectoryNode" />
+              <item name="igblast" type="462c0819:PsiDirectoryNode" />
+              <item name="igblast_db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parse_tcr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="parse_tcr" type="462c0819:PsiDirectoryNode" />
+              <item name="sequence_db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parse_tcr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="parse_tcr" type="462c0819:PsiDirectoryNode" />
+              <item name="sequence_db" type="462c0819:PsiDirectoryNode" />
+              <item name="homosapiens" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parse_tcr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="parse_tcr" type="462c0819:PsiDirectoryNode" />
+              <item name="sequence_db" type="462c0819:PsiDirectoryNode" />
+              <item name="musmusculus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parse_tcr" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/igblast" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.cut_c_domain">
+    <configuration name="cut_c_domain" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="parse_tcr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cut_c_domain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="parse_tcr" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="parse_tcr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/igblast" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/igblast/parse_tcr.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="process_imgt_sequences" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="parse_tcr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/makeblastdb_sequences.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="shch_fasta_parse" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="parse_tcr" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shch_fasta_parse.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.process_imgt_sequences" />
+      <item itemvalue="Python.parse_tcr" />
+      <item itemvalue="Python.shch_fasta_parse" />
+      <item itemvalue="Python.cut_c_domain" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.cut_c_domain" />
+        <item itemvalue="Python.process_imgt_sequences" />
+        <item itemvalue="Python.shch_fasta_parse" />
+        <item itemvalue="Python.parse_tcr" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f98bbc49-ccc1-4f0b-a103-cac18e9b5e90" name="Default" comment="" />
+      <created>1532089702342</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532089702342</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="156" y="121" width="1482" height="1011" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966262" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32977587" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966262" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32977587" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MOUSE_PDB_TCRB_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcr_human_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="93" selection-start-line="12" selection-start-column="92" selection-end-line="12" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shch_fasta_parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcr_human.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="249" selection-start-line="1" selection-end-line="1" selection-end-column="249" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/igblast_seq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/parse_tcr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcr_human_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="86" lean-forward="true" selection-start-line="3" selection-start-column="80" selection-end-line="3" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/makeblastdb_sequences.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="51" column="26" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast_sequences/igblast_all_C_aminoacid.fasta" />
+    <entry file="file://$PROJECT_DIR$/igblast/database/mouse_gl_D.nsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/database/mouse_gl_D.nog">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/database/mouse_gl_D.nin">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/database/mouse_gl_D.nhr">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/database/mouse_gl_D.nsi">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/database/mouse_gl_J.nhr">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/database/mouse_gl_D.nsq">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast_seq.py" />
+    <entry file="file://$PROJECT_DIR$/test_tcr_human_igblast_out.txt" />
+    <entry file="file://$PROJECT_DIR$/igblast/TESTOUTFILE.txt" />
+    <entry file="file://$PROJECT_DIR$/test_tcr_human_igblasted.txt" />
+    <entry file="file://$PROJECT_DIR$/../ch_imgt_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcr_human_v_blasted.txt" />
+    <entry file="file://$PROJECT_DIR$/test_tcr_human_j_blasted.txt" />
+    <entry file="file://$PROJECT_DIR$/test_tcr_human_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="93" selection-start-line="12" selection-start-column="92" selection-end-line="12" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HUMAN_PDB_TCRA_j_blasted.txt" />
+    <entry file="file://$PROJECT_DIR$/CHIMERA_HUMAN_PDB_TCRA_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHIMERA_HUMAN_PDB_TCRB_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHIMERA_MOUSE_PDB_TCRA_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HUMAN_PDB_TCRA_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11565">
+          <caret line="771" column="62" selection-start-line="771" selection-start-column="28" selection-end-line="771" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HUMAN_PDB_TCRA.fasta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3870">
+          <caret line="258" selection-start-line="258" selection-end-line="258" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOUSE_PDB_TCRB_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHIMERA_MOUSE_PDB_TCRB_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/igblast_seq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/makeblastdb_sequences.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shch_fasta_parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HUMAN_PDB_TCRB_constant_tmp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121582" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOUSE_PDB_TCRA_constant_tmp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="113" column="19" selection-start-line="113" selection-start-column="16" selection-end-line="113" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HUMAN_PDB_TCRA_constant_tmp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10755">
+          <caret line="717" column="19" selection-start-line="717" selection-start-column="16" selection-end-line="717" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOUSE_PDB_TCRB_constant_tmp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13725">
+          <caret line="915" column="5" selection-start-line="915" selection-end-line="915" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/find_longest_c_domain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="21" selection-start-line="12" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c_domain_PDB_info.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/aminoacid_HomoSapiens_Constant_sequences.fasta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cut_c_domain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="28" column="92" selection-start-line="28" selection-start-column="92" selection-end-line="28" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence_db/musmusculus/aminoacid_MusMusculus_Constant_sequences_splitted_for_pdb.fasta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="60" selection-start-line="8" selection-end-line="8" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/aminoacid_HomoSapiens_Constant_sequences_splitted_for_pdb.fasta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/aminoacid_HomoSapiens_Joining_sequences.fasta">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/aminoacid_HomoSapiens_Variable_sequences.fasta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="28" selection-start-line="2" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence_db/homosapiens/nucleotide_HomoSapiens_Variable_sequences.fasta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_tcr_human.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MOUSE_PDB_TCRA_parsed.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="52" lean-forward="true" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/igblast/parse_tcr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

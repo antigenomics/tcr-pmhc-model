@@ -1,0 +1,1497 @@
+BLASTP 2.7.1+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: sequence_db/musmusculus/aminoacid_MusMusculus_Constant_sequences.fas
+ta
+           3 sequences; 480 total letters
+
+
+
+Query= 1d9k_mod_MOD_FIT_NEW_A
+
+Length=110
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRBC1*01  unnamed protein product                                     13.5    3.3  
+TRBC2*01  unnamed protein product                                     13.1    5.1  
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 13.5 bits (23),  Expect = 3.3, Method: Compositional matrix adjust.
+ Identities = 7/32 (22%), Positives = 12/32 (38%), Gaps = 0/32 (0%)
+
+Query  18   ILNCSYEDSTFDYFPWYRQFPGKSPALLIAIS  49
+            I + SY+         Y    GK+    + +S
+Sbjct  128  ITSASYQQGVLSATILYEILLGKATLYAVLVS  159
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 13.1 bits (22),  Expect = 5.1, Method: Compositional matrix adjust.
+ Identities = 7/32 (22%), Positives = 11/32 (34%), Gaps = 0/32 (0%)
+
+Query  18   ILNCSYEDSTFDYFPWYRQFPGKSPALLIAIS  49
+            I + SY          Y    GK+    + +S
+Sbjct  128  ITSASYHQGVLSATILYEILLGKATLYAVLVS  159
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.133    0.408    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 36432
+
+
+Query= 1fo0_mod_MOD_FIT_NEW_A
+
+Length=115
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      14.2    2.2  
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 14.2 bits (25),  Expect = 2.2, Method: Compositional matrix adjust.
+ Identities = 14/46 (30%), Positives = 18/46 (39%), Gaps = 18/46 (39%)
+
+Query  49   QDSYKKENATVG-----------------HYSLNFQKPKSSIGLII  77
+            QD +K+ NAT                     +LNFQ   S +GL I
+Sbjct  73   QDIFKETNATYPSSDVPCDATLTEKSFETDMNLNFQN-LSVMGLRI  117
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.131    0.376    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 38502
+
+
+Query= 1g6r_mod_MOD_FIT2_A
+
+Length=202
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      187     1e-65
+TRBC1*01  unnamed protein product                                     17.7    0.33 
+TRBC2*01  unnamed protein product                                     17.3    0.38 
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 187 bits (474),  Expect = 1e-65, Method: Compositional matrix adjust.
+ Identities = 88/90 (98%), Positives = 88/90 (98%), Gaps = 0/90 (0%)
+
+Query  113  IQNPEPAVYALKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDATVLDMKAMDSKSNG  172
+            IQNPEPAVY LKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITD TVLDMKAMDSKSNG
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  173  AIAWSNQTSFTCQDIFKETNATYPSSDVPC  202
+            AIAWSNQTSFTCQDIFKETNATYPSSDVPC
+Sbjct  61   AIAWSNQTSFTCQDIFKETNATYPSSDVPC  90
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 17.7 bits (34),  Expect = 0.33, Method: Compositional matrix adjust.
+ Identities = 13/49 (27%), Positives = 23/49 (47%), Gaps = 5/49 (10%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSF----HLRKASVHWSDSAVYF-CAV  92
+           + +G  V  GV+     + +SN S+     LR ++  W +   +F C V
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCLSSRLRVSATFWHNPRNHFRCQV  93
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 17.3 bits (33),  Expect = 0.38, Method: Compositional matrix adjust.
+ Identities = 13/49 (27%), Positives = 23/49 (47%), Gaps = 5/49 (10%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSF----HLRKASVHWSDSAVYF-CAV  92
+           + +G  V  GV+     + +SN S+     LR ++  W +   +F C V
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCLSSRLRVSATFWHNPRNHFRCQV  93
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.130    0.390    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 70752
+
+
+Query= 1kj2_mod_MOD_FIT_NEW_A
+
+Length=111
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.134    0.408    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 36846
+
+
+Query= 1mwa_mod_MOD_FIT2_A
+
+Length=202
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      187     1e-65
+TRBC1*01  unnamed protein product                                     17.7    0.33 
+TRBC2*01  unnamed protein product                                     17.3    0.38 
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 187 bits (474),  Expect = 1e-65, Method: Compositional matrix adjust.
+ Identities = 88/90 (98%), Positives = 88/90 (98%), Gaps = 0/90 (0%)
+
+Query  113  IQNPEPAVYALKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDATVLDMKAMDSKSNG  172
+            IQNPEPAVY LKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITD TVLDMKAMDSKSNG
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  173  AIAWSNQTSFTCQDIFKETNATYPSSDVPC  202
+            AIAWSNQTSFTCQDIFKETNATYPSSDVPC
+Sbjct  61   AIAWSNQTSFTCQDIFKETNATYPSSDVPC  90
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 17.7 bits (34),  Expect = 0.33, Method: Compositional matrix adjust.
+ Identities = 13/49 (27%), Positives = 23/49 (47%), Gaps = 5/49 (10%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSF----HLRKASVHWSDSAVYF-CAV  92
+           + +G  V  GV+     + +SN S+     LR ++  W +   +F C V
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCLSSRLRVSATFWHNPRNHFRCQV  93
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 17.3 bits (33),  Expect = 0.38, Method: Compositional matrix adjust.
+ Identities = 13/49 (27%), Positives = 23/49 (47%), Gaps = 5/49 (10%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSF----HLRKASVHWSDSAVYF-CAV  92
+           + +G  V  GV+     + +SN S+     LR ++  W +   +F C V
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCLSSRLRVSATFWHNPRNHFRCQV  93
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.130    0.390    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 70752
+
+
+Query= 1nam_mod_MOD_FIT_NEW_A
+
+Length=116
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      14.2    2.2  
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 14.2 bits (25),  Expect = 2.2, Method: Compositional matrix adjust.
+ Identities = 14/46 (30%), Positives = 18/46 (39%), Gaps = 18/46 (39%)
+
+Query  50   QDSYKKENATVG-----------------HYSLNFQKPKSSIGLII  78
+            QD +K+ NAT                     +LNFQ   S +GL I
+Sbjct  73   QDIFKETNATYPSSDVPCDATLTEKSFETDMNLNFQN-LSVMGLRI  117
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.131    0.374    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 38916
+
+
+Query= 1u3h_mod_MOD_FIT_NEW_A
+
+Length=110
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.132    0.402    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 36432
+
+
+Query= 2ckb_mod_MOD_FIT2_A
+
+Length=202
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      187     1e-65
+TRBC1*01  unnamed protein product                                     17.7    0.33 
+TRBC2*01  unnamed protein product                                     17.3    0.38 
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 187 bits (474),  Expect = 1e-65, Method: Compositional matrix adjust.
+ Identities = 88/90 (98%), Positives = 88/90 (98%), Gaps = 0/90 (0%)
+
+Query  113  IQNPEPAVYALKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDATVLDMKAMDSKSNG  172
+            IQNPEPAVY LKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITD TVLDMKAMDSKSNG
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  173  AIAWSNQTSFTCQDIFKETNATYPSSDVPC  202
+            AIAWSNQTSFTCQDIFKETNATYPSSDVPC
+Sbjct  61   AIAWSNQTSFTCQDIFKETNATYPSSDVPC  90
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 17.7 bits (34),  Expect = 0.33, Method: Compositional matrix adjust.
+ Identities = 13/49 (27%), Positives = 23/49 (47%), Gaps = 5/49 (10%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSF----HLRKASVHWSDSAVYF-CAV  92
+           + +G  V  GV+     + +SN S+     LR ++  W +   +F C V
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCLSSRLRVSATFWHNPRNHFRCQV  93
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 17.3 bits (33),  Expect = 0.38, Method: Compositional matrix adjust.
+ Identities = 13/49 (27%), Positives = 23/49 (47%), Gaps = 5/49 (10%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSF----HLRKASVHWSDSAVYF-CAV  92
+           + +G  V  GV+     + +SN S+     LR ++  W +   +F C V
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCLSSRLRVSATFWHNPRNHFRCQV  93
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.130    0.390    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 70752
+
+
+Query= 2e7l_mod_MOD_FIT_NEW_A
+
+Length=112
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRBC1*01  unnamed protein product                                     15.0    1.1  
+TRBC2*01  unnamed protein product                                     15.0    1.2  
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 15.0 bits (27),  Expect = 1.1, Method: Compositional matrix adjust.
+ Identities = 8/27 (30%), Positives = 14/27 (52%), Gaps = 0/27 (0%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSFHL  75
+           + +G  V  GV+     + +SN S+ L
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCL  71
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 15.0 bits (27),  Expect = 1.2, Method: Compositional matrix adjust.
+ Identities = 8/27 (30%), Positives = 14/27 (52%), Gaps = 0/27 (0%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSFHL  75
+           + +G  V  GV+     + +SN S+ L
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCL  71
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.133    0.403    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 37260
+
+
+Query= 2oi9_mod_MOD_FIT_NEW_B
+
+Length=110
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRBC1*01  unnamed protein product                                     15.4    0.89 
+TRBC2*01  unnamed protein product                                     15.0    1.0  
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 15.4 bits (28),  Expect = 0.89, Method: Compositional matrix adjust.
+ Identities = 8/27 (30%), Positives = 14/27 (52%), Gaps = 0/27 (0%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSFHL  75
+           + +G  V  GV+     + +SN S+ L
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCL  71
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 15.0 bits (27),  Expect = 1.0, Method: Compositional matrix adjust.
+ Identities = 8/27 (30%), Positives = 14/27 (52%), Gaps = 0/27 (0%)
+
+Query  49  YYSGDPVVQGVNGFEAEFSKSNSSFHL  75
+           + +G  V  GV+     + +SN S+ L
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCL  71
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.132    0.390    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 36432
+
+
+Query= 2ol3_mod_MOD_FIT_NEW_A
+
+Length=118
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      14.2    2.1  
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 14.2 bits (25),  Expect = 2.1, Method: Compositional matrix adjust.
+ Identities = 14/46 (30%), Positives = 18/46 (39%), Gaps = 18/46 (39%)
+
+Query  50   QDSYKKENATVG-----------------HYSLNFQKPKSSIGLII  78
+            QD +K+ NAT                     +LNFQ   S +GL I
+Sbjct  73   QDIFKETNATYPSSDVPCDATLTEKSFETDMNLNFQN-LSVMGLRI  117
+
+
+
+Lambda      K        H        a         alpha
+   0.316    0.130    0.373    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 39744
+
+
+Query= 2pxy_mod_MOD_FIT_NEW_A
+
+Length=114
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.313    0.129    0.377    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 38088
+
+
+Query= 2z31_mod_MOD_FIT_NEW_A
+
+Length=112
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.313    0.130    0.382    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 37260
+
+
+Query= 3e2h_mod_MOD_FIT_NEW_B
+
+Length=109
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRBC1*01  unnamed protein product                                     15.4    0.93 
+TRBC2*01  unnamed protein product                                     15.0    1.0  
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 15.4 bits (28),  Expect = 0.93, Method: Compositional matrix adjust.
+ Identities = 8/27 (30%), Positives = 14/27 (52%), Gaps = 0/27 (0%)
+
+Query  48  YYSGDPVVQGVNGFEAEFSKSNSSFHL  74
+           + +G  V  GV+     + +SN S+ L
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCL  71
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 15.0 bits (27),  Expect = 1.0, Method: Compositional matrix adjust.
+ Identities = 8/27 (30%), Positives = 14/27 (52%), Gaps = 0/27 (0%)
+
+Query  48  YYSGDPVVQGVNGFEAEFSKSNSSFHL  74
+           + +G  V  GV+     + +SN S+ L
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCL  71
+
+
+
+Lambda      K        H        a         alpha
+   0.319    0.133    0.398    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 36696
+
+
+Query= 3e3q_mod_MOD_FIT_NEW_D
+
+Length=109
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRBC1*01  unnamed protein product                                     15.4    0.86 
+TRBC2*01  unnamed protein product                                     15.0    0.96 
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 15.4 bits (28),  Expect = 0.86, Method: Compositional matrix adjust.
+ Identities = 8/27 (30%), Positives = 14/27 (52%), Gaps = 0/27 (0%)
+
+Query  48  YYSGDPVVQGVNGFEAEFSKSNSSFHL  74
+           + +G  V  GV+     + +SN S+ L
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCL  71
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 15.0 bits (27),  Expect = 0.96, Method: Compositional matrix adjust.
+ Identities = 8/27 (30%), Positives = 14/27 (52%), Gaps = 0/27 (0%)
+
+Query  48  YYSGDPVVQGVNGFEAEFSKSNSSFHL  74
+           + +G  V  GV+     + +SN S+ L
+Sbjct  45  WVNGKEVHSGVSTDPQAYKESNYSYCL  71
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.133    0.403    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 36696
+
+
+Query= 3mbe_mod_MOD_FIT_NEW_C
+
+Length=192
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      170     4e-59
+TRBC1*01  unnamed protein product                                     16.9    0.56 
+TRBC2*01  unnamed protein product                                     16.5    0.58 
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 170 bits (430),  Expect = 4e-59, Method: Compositional matrix adjust.
+ Identities = 81/82 (99%), Positives = 81/82 (99%), Gaps = 0/82 (0%)
+
+Query  111  IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKCVLDMKAMDSKSNG  170
+            IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDK VLDMKAMDSKSNG
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  171  AIAWSNQTSFTCQDIFKETNAT  192
+            AIAWSNQTSFTCQDIFKETNAT
+Sbjct  61   AIAWSNQTSFTCQDIFKETNAT  82
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 16.9 bits (32),  Expect = 0.56, Method: Compositional matrix adjust.
+ Identities = 5/8 (63%), Positives = 7/8 (88%), Gaps = 0/8 (0%)
+
+Query  7   PPALSLYE  14
+           PP +SL+E
+Sbjct  7   PPKVSLFE  14
+
+
+ Score = 16.5 bits (31),  Expect = 0.73, Method: Compositional matrix adjust.
+ Identities = 12/44 (27%), Positives = 20/44 (45%), Gaps = 1/44 (2%)
+
+Query  44  TLFYLAQGT-KENGRLKSTFNSKERYSTLHIKDAQLEDSGTYFC  86
+           TL  LA+G   ++  L    N KE +S +       ++S   +C
+Sbjct  27  TLVCLARGFFPDHVELSWWVNGKEVHSGVSTDPQAYKESNYSYC  70
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 16.5 bits (31),  Expect = 0.58, Method: Compositional matrix adjust.
+ Identities = 5/8 (63%), Positives = 7/8 (88%), Gaps = 0/8 (0%)
+
+Query  7   PPALSLYE  14
+           PP +SL+E
+Sbjct  7   PPKVSLFE  14
+
+
+ Score = 16.2 bits (30),  Expect = 0.78, Method: Compositional matrix adjust.
+ Identities = 12/44 (27%), Positives = 20/44 (45%), Gaps = 1/44 (2%)
+
+Query  44  TLFYLAQGT-KENGRLKSTFNSKERYSTLHIKDAQLEDSGTYFC  86
+           TL  LA+G   ++  L    N KE +S +       ++S   +C
+Sbjct  27  TLVCLARGFFPDHVELSWWVNGKEVHSGVSTDPQAYKESNYSYC  70
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.130    0.384    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 66732
+
+
+Query= 3pqy_mod_MOD_FIT2_D
+
+Length=189
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      94.4    2e-29
+TRBC2*01  unnamed protein product                                     20.0    0.051
+TRBC1*01  unnamed protein product                                     18.9    0.10 
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 94.4 bits (233),  Expect = 2e-29, Method: Compositional matrix adjust.
+ Identities = 45/79 (57%), Positives = 58/79 (73%), Gaps = 6/79 (8%)
+
+Query  109  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNV----SSDVYITDKCVLDMRSM--KSNS  162
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV     S  +ITDK VLDM++M  KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  163  AVAWSNKSDFACANAFNNS  181
+            A+AWSN++ F C + F  +
+Sbjct  61   AIAWSNQTSFTCQDIFKET  79
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 20.0 bits (40),  Expect = 0.051, Method: Compositional matrix adjust.
+ Identities = 9/26 (35%), Positives = 14/26 (54%), Gaps = 0/26 (0%)
+
+Query  81   AAVYHCILSGGSNYKLTFGKGTLLTV  106
+            A+ +  +LS    Y++  GK TL  V
+Sbjct  131  ASYHQGVLSATILYEILLGKATLYAV  156
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 18.9 bits (37),  Expect = 0.10, Method: Compositional matrix adjust.
+ Identities = 8/20 (40%), Positives = 11/20 (55%), Gaps = 0/20 (0%)
+
+Query  87   ILSGGSNYKLTFGKGTLLTV  106
+            +LS    Y++  GK TL  V
+Sbjct  137  VLSATILYEILLGKATLYAV  156
+
+
+ Score = 13.1 bits (22),  Expect = 10.0, Method: Compositional matrix adjust.
+ Identities = 6/21 (29%), Positives = 8/21 (38%), Gaps = 0/21 (0%)
+
+Query  92   SNYKLTFGKGTLLTVTPIQNP  112
+            SNY         ++ T   NP
+Sbjct  65   SNYSYCLSSRLRVSATFWHNP  85
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.128    0.381    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 65526
+
+
+Query= 3qiu_mod_MOD_FIT2_C
+
+Length=178
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      92.0    1e-28
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 92.0 bits (227),  Expect = 1e-28, Method: Compositional matrix adjust.
+ Identities = 42/65 (65%), Positives = 53/65 (82%), Gaps = 2/65 (3%)
+
+Query  109  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNV--SQDSDVYITDKCVLDMRSMDFKSNS  166
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV  + +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  167  AVAWS  171
+            A+AWS
+Sbjct  61   AIAWS  65
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.128    0.375    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 61965
+
+
+Query= 3rgv_mod_MOD_FIT2_A
+
+Length=200
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      105     8e-34
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 105 bits (263),  Expect = 8e-34, Method: Compositional matrix adjust.
+ Identities = 46/79 (58%), Positives = 62/79 (78%), Gaps = 0/79 (0%)
+
+Query  111  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  170
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  171  AVAWSNKSDFACANAFNNS  189
+            A+AWSN++ F C + F  +
+Sbjct  61   AIAWSNQTSFTCQDIFKET  79
+
+
+
+Lambda      K        H        a         alpha
+   0.314    0.128    0.378    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 69948
+
+
+Query= 4mvb_mod_MOD_FIT2_C
+
+Length=199
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      106     4e-34
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 106 bits (265),  Expect = 4e-34, Method: Compositional matrix adjust.
+ Identities = 46/79 (58%), Positives = 62/79 (78%), Gaps = 0/79 (0%)
+
+Query  114  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  173
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  174  AVAWSNKSDFACANAFNNS  192
+            A+AWSN++ F C + F  +
+Sbjct  61   AIAWSNQTSFTCQDIFKET  79
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.128    0.380    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 69546
+
+
+Query= 4mxq_mod_MOD_FIT2_C
+
+Length=199
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      106     5e-34
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 106 bits (265),  Expect = 5e-34, Method: Compositional matrix adjust.
+ Identities = 46/76 (61%), Positives = 61/76 (80%), Gaps = 0/76 (0%)
+
+Query  115  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  174
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  175  AVAWSNKSDFACANAF  190
+            A+AWSN++ F C + F
+Sbjct  61   AIAWSNQTSFTCQDIF  76
+
+
+
+Lambda      K        H        a         alpha
+   0.316    0.128    0.380    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 69546
+
+
+Query= 4n0c_mod_MOD_FIT2_C
+
+Length=195
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      99.4    3e-31
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 99.4 bits (246),  Expect = 3e-31, Method: Compositional matrix adjust.
+ Identities = 45/75 (60%), Positives = 60/75 (80%), Gaps = 2/75 (3%)
+
+Query  116  IQNPDPAVYQLRDSKS--SSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  173
+            IQNP+PAVYQL+D +S  S++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  174  AVAWSNKSDFACANF  188
+            A+AWSN++ F C + 
+Sbjct  61   AIAWSNQTSFTCQDI  75
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.127    0.378    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 67938
+
+
+Query= 4n5e_mod_MOD_FIT2_C
+
+Length=199
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      100     8e-32
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 100 bits (250),  Expect = 8e-32, Method: Compositional matrix adjust.
+ Identities = 46/79 (58%), Positives = 60/79 (76%), Gaps = 2/79 (3%)
+
+Query  116  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  175
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  176  AVAWSND--FACANAFNNS  192
+            A+AWSN   F C + F  +
+Sbjct  61   AIAWSNQTSFTCQDIFKET  79
+
+
+
+Lambda      K        H        a         alpha
+   0.316    0.128    0.381    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 69546
+
+
+Query= 4p2o_mod_MOD_FIT2_C
+
+Length=200
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      106     4e-34
+TRBC1*01  unnamed protein product                                     14.6    3.3  
+TRBC2*01  unnamed protein product                                     14.2    3.5  
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 106 bits (265),  Expect = 4e-34, Method: Compositional matrix adjust.
+ Identities = 46/79 (58%), Positives = 62/79 (78%), Gaps = 0/79 (0%)
+
+Query  111  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  170
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  171  AVAWSNKSDFACANAFNNS  189
+            A+AWSN++ F C + F  +
+Sbjct  61   AIAWSNQTSFTCQDIFKET  79
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 14.6 bits (26),  Expect = 3.3, Method: Compositional matrix adjust.
+ Identities = 7/28 (25%), Positives = 13/28 (46%), Gaps = 0/28 (0%)
+
+Query  62  NSKESYSTLHIRDAQLEDSGTYFCAALR  89
+           N KE +S +       ++S   +C + R
+Sbjct  47  NGKEVHSGVSTDPQAYKESNYSYCLSSR  74
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 14.2 bits (25),  Expect = 3.5, Method: Compositional matrix adjust.
+ Identities = 7/28 (25%), Positives = 13/28 (46%), Gaps = 0/28 (0%)
+
+Query  62  NSKESYSTLHIRDAQLEDSGTYFCAALR  89
+           N KE +S +       ++S   +C + R
+Sbjct  47  NGKEVHSGVSTDPQAYKESNYSYCLSSR  74
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.127    0.371    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 69948
+
+
+Query= 4p2q_mod_MOD_FIT2_D
+
+Length=196
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      99.8    2e-31
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 99.8 bits (247),  Expect = 2e-31, Method: Compositional matrix adjust.
+ Identities = 45/79 (57%), Positives = 60/79 (76%), Gaps = 3/79 (4%)
+
+Query  111  IQNPDPAVYQLRD---SDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  167
+            IQNP+PAVYQL+D    D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  168  AVAWSNKSDFACANAFNNS  186
+            A+AWSN++ F C + F  +
+Sbjct  61   AIAWSNQTSFTCQDIFKET  79
+
+
+
+Lambda      K        H        a         alpha
+   0.316    0.128    0.375    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 68340
+
+
+Query= 4p2r_mod_MOD_FIT2_D
+
+Length=196
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      99.8    2e-31
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 99.8 bits (247),  Expect = 2e-31, Method: Compositional matrix adjust.
+ Identities = 45/79 (57%), Positives = 60/79 (76%), Gaps = 3/79 (4%)
+
+Query  111  IQNPDPAVYQLRD---SDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  167
+            IQNP+PAVYQL+D    D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  168  AVAWSNKSDFACANAFNNS  186
+            A+AWSN++ F C + F  +
+Sbjct  61   AIAWSNQTSFTCQDIFKET  79
+
+
+
+Lambda      K        H        a         alpha
+   0.316    0.128    0.375    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 68340
+
+
+Query= 4p46_mod_MOD_FIT2_A
+
+Length=199
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      105     1e-33
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 105 bits (261),  Expect = 1e-33, Method: Compositional matrix adjust.
+ Identities = 46/76 (61%), Positives = 61/76 (80%), Gaps = 0/76 (0%)
+
+Query  111  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  170
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  171  AVAWSNKSDFACANAF  186
+            A+AWSN++ F C + F
+Sbjct  61   AIAWSNQTSFTCQDIF  76
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.131    0.392    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 69546
+
+
+Query= 5ivx_mod_MOD_FIT_NEW_E
+
+Length=194
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      165     3e-57
+TRBC1*01  unnamed protein product                                     20.0    0.056
+TRBC2*01  unnamed protein product                                     19.6    0.059
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 165 bits (418),  Expect = 3e-57, Method: Compositional matrix adjust.
+ Identities = 79/80 (99%), Positives = 79/80 (99%), Gaps = 0/80 (0%)
+
+Query  115  IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKCVLDMKAMDSKSNG  174
+            IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDK VLDMKAMDSKSNG
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  175  AIAWSNQTSFTCQDIFKETN  194
+            AIAWSNQTSFTCQDIFKETN
+Sbjct  61   AIAWSNQTSFTCQDIFKETN  80
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 20.0 bits (40),  Expect = 0.056, Method: Compositional matrix adjust.
+ Identities = 11/28 (39%), Positives = 14/28 (50%), Gaps = 3/28 (11%)
+
+Query  76   IADSQPGDSATYFCAASASFGDNSKLIW  103
+            IA+ Q    AT  C A   F D+ +L W
+Sbjct  20   IANKQ---KATLVCLARGFFPDHVELSW  44
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 19.6 bits (39),  Expect = 0.059, Method: Compositional matrix adjust.
+ Identities = 11/28 (39%), Positives = 14/28 (50%), Gaps = 3/28 (11%)
+
+Query  76   IADSQPGDSATYFCAASASFGDNSKLIW  103
+            IA+ Q    AT  C A   F D+ +L W
+Sbjct  20   IANKQ---KATLVCLARGFFPDHVELSW  44
+
+
+
+Lambda      K        H        a         alpha
+   0.316    0.131    0.395    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 67536
+
+
+Query= 5m00_mod_MOD_FIT2_G
+
+Length=187
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      152     3e-52
+TRBC2*01  unnamed protein product                                     13.1    8.4  
+TRBC1*01  unnamed protein product                                     13.1    9.9  
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 152 bits (384),  Expect = 3e-52, Method: Compositional matrix adjust.
+ Identities = 75/77 (97%), Positives = 75/77 (97%), Gaps = 1/77 (1%)
+
+Query  112  IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKCVLDMKA-DSKSNG  170
+            IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDK VLDMKA DSKSNG
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  171  AIAWSNQTSFTCQDIFK  187
+            AIAWSNQTSFTCQDIFK
+Sbjct  61   AIAWSNQTSFTCQDIFK  77
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 13.1 bits (22),  Expect = 8.4, Method: Compositional matrix adjust.
+ Identities = 21/94 (22%), Positives = 36/94 (38%), Gaps = 23/94 (24%)
+
+Query  110  PNIQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKCV-----LDMKA  164
+            P +   EP+  ++ + + + + +CL   F      P  +E   ++  K V      D +A
+Sbjct  8    PKVSLFEPSKAEIAN-KQKATLVCLARGF-----FPDHVELSWWVNGKEVHSGVSTDPQA  61
+
+Query  165  DSKSN-----------GAIAWSN-QTSFTCQDIF  186
+              +SN            A  W N +  F CQ  F
+Sbjct  62   YKESNYSYCLSSRLRVSATFWHNPRNHFRCQVQF  95
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 13.1 bits (22),  Expect = 9.9, Method: Compositional matrix adjust.
+ Identities = 21/94 (22%), Positives = 36/94 (38%), Gaps = 23/94 (24%)
+
+Query  110  PNIQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKCV-----LDMKA  164
+            P +   EP+  ++ + + + + +CL   F      P  +E   ++  K V      D +A
+Sbjct  8    PKVSLFEPSKAEIAN-KQKATLVCLARGF-----FPDHVELSWWVNGKEVHSGVSTDPQA  61
+
+Query  165  DSKSN-----------GAIAWSN-QTSFTCQDIF  186
+              +SN            A  W N +  F CQ  F
+Sbjct  62   YKESNYSYCLSSRLRVSATFWHNPRNHFRCQVQF  95
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.132    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 64722
+
+
+Query= 5m01_mod_MOD_FIT2_G
+
+Length=188
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      159     5e-55
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 159 bits (402),  Expect = 5e-55, Method: Compositional matrix adjust.
+ Identities = 76/77 (99%), Positives = 76/77 (99%), Gaps = 0/77 (0%)
+
+Query  112  IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKCVLDMKAMDSKSNG  171
+            IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDK VLDMKAMDSKSNG
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  172  AIAWSNQTSFTCQDIFK  188
+            AIAWSNQTSFTCQDIFK
+Sbjct  61   AIAWSNQTSFTCQDIFK  77
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.132    0.400    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 65124
+
+
+Query= 5m02_mod_MOD_FIT2_G
+
+Length=187
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      159     6e-55
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 159 bits (402),  Expect = 6e-55, Method: Compositional matrix adjust.
+ Identities = 76/77 (99%), Positives = 76/77 (99%), Gaps = 0/77 (0%)
+
+Query  111  IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKCVLDMKAMDSKSNG  170
+            IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDK VLDMKAMDSKSNG
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  171  AIAWSNQTSFTCQDIFK  187
+            AIAWSNQTSFTCQDIFK
+Sbjct  61   AIAWSNQTSFTCQDIFK  77
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.132    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 64722
+
+
+Query= 5sws_mod_MOD_FIT2_D
+
+Length=198
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      99.4    3e-31
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 99.4 bits (246),  Expect = 3e-31, Method: Compositional matrix adjust.
+ Identities = 45/76 (59%), Positives = 60/76 (79%), Gaps = 2/76 (3%)
+
+Query  115  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSM--KSNS  172
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++M  KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  173  AVAWSNKSDFACANAF  188
+            A+AWSN++ F C + F
+Sbjct  61   AIAWSNQTSFTCQDIF  76
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.129    0.386    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 69144
+
+
+Query= 5swz_mod_MOD_FIT2_D
+
+Length=198
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      97.4    2e-30
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 97.4 bits (241),  Expect = 2e-30, Method: Compositional matrix adjust.
+ Identities = 43/67 (64%), Positives = 56/67 (84%), Gaps = 0/67 (0%)
+
+Query  115  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  174
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  175  AVAWSNK  181
+            A+AWSN+
+Sbjct  61   AIAWSNQ  67
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.129    0.387    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 69144
+
+
+Query= 5tje_mod_MOD_FIT_NEW_G
+
+Length=112
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRBC1*01  unnamed protein product                                     12.7    7.1  
+TRBC2*01  unnamed protein product                                     12.7    7.3  
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 12.7 bits (21),  Expect = 7.1, Method: Compositional matrix adjust.
+ Identities = 10/30 (33%), Positives = 12/30 (40%), Gaps = 9/30 (30%)
+
+Query  30   NYFPWYQQFPGEGPALLISILSVSDKKEDG  59
+            N+F    QF G         LS  DK  +G
+Sbjct  87   NHFRCQVQFHG---------LSEEDKWPEG  107
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 12.7 bits (21),  Expect = 7.3, Method: Compositional matrix adjust.
+ Identities = 10/30 (33%), Positives = 12/30 (40%), Gaps = 9/30 (30%)
+
+Query  30   NYFPWYQQFPGEGPALLISILSVSDKKEDG  59
+            N+F    QF G         LS  DK  +G
+Sbjct  87   NHFRCQVQFHG---------LSEEDKWPEG  107
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.135    0.410    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 37260
+
+
+Query= 5wlg_mod_MOD_FIT2_D
+
+Length=182
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+TRAC*01  unnamed protein product                                      107     1e-34
+TRBC2*01  unnamed protein product                                     15.0    2.2  
+TRBC1*01  unnamed protein product                                     15.0    2.2  
+
+
+>TRAC*01 unnamed protein product
+Length=136
+
+ Score = 107 bits (267),  Expect = 1e-34, Method: Compositional matrix adjust.
+ Identities = 46/76 (61%), Positives = 61/76 (80%), Gaps = 0/76 (0%)
+
+Query  106  IQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNS  165
+            IQNP+PAVYQL+D +S D ++CLFTDFDSQ NV ++ +S  +ITDK VLDM++MD KSN 
+Sbjct  1    IQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNG  60
+
+Query  166  AVAWSNKSDFACANAF  181
+            A+AWSN++ F C + F
+Sbjct  61   AIAWSNQTSFTCQDIF  76
+
+
+>TRBC2*01 unnamed protein product
+Length=172
+
+ Score = 15.0 bits (27),  Expect = 2.2, Method: Compositional matrix adjust.
+ Identities = 8/19 (42%), Positives = 9/19 (47%), Gaps = 5/19 (26%)
+
+Query  110  DPAVYQLRDSKSSDKSVCL  128
+            DP  Y     K S+ S CL
+Sbjct  58   DPQAY-----KESNYSYCL  71
+
+
+ Score = 13.5 bits (23),  Expect = 6.0, Method: Compositional matrix adjust.
+ Identities = 4/7 (57%), Positives = 4/7 (57%), Gaps = 0/7 (0%)
+
+Query  29   WYRQDSG  35
+            W R D G
+Sbjct  121  WGRADCG  127
+
+
+>TRBC1*01 unnamed protein product
+Length=172
+
+ Score = 15.0 bits (27),  Expect = 2.2, Method: Compositional matrix adjust.
+ Identities = 8/19 (42%), Positives = 9/19 (47%), Gaps = 5/19 (26%)
+
+Query  110  DPAVYQLRDSKSSDKSVCL  128
+            DP  Y     K S+ S CL
+Sbjct  58   DPQAY-----KESNYSYCL  71
+
+
+ Score = 13.5 bits (23),  Expect = 6.1, Method: Compositional matrix adjust.
+ Identities = 4/7 (57%), Positives = 4/7 (57%), Gaps = 0/7 (0%)
+
+Query  29   WYRQDSG  35
+            W R D G
+Sbjct  121  WGRADCG  127
+
+
+
+Lambda      K        H        a         alpha
+   0.316    0.127    0.367    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 63585
+
+
+  Database: sequence_db/musmusculus/aminoacid_MusMusculus_Constant_sequences.fas
+ta
+    Posted date:  Aug 13, 2018  1:23 PM
+  Number of letters in database: 480
+  Number of sequences in database:  3
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
