@@ -1,12 +1,14 @@
 import sys
 import os
 import argparse
+
 import pandas as pd
+from Bio import SeqIO
 
 #==============================
 curr_version = 1.0
 parser = argparse.ArgumentParser(
-    description="This search TCR sequence in .")
+    description="This script will find CDR positions in TCR sequences.")
 
 parser.add_argument(
     "--inpfile", nargs=1, type=str, default="../test_tcr_human.txt",#_nucleotide.fasta",
@@ -38,7 +40,7 @@ if args.outfile is not None:
         args.outfile = args.outfile[0]
     outfile = args.outfile
 else:
-    outfile = ".".join(inpfile.split(".")[:-1])+"_parsed_out.txt"
+    outfile = ".".join(inpfile.split(".")[:-1])+"_parsed.txt"
     
 
 tmpfile_v = ".".join(inpfile.split(".")[:-1])+"_v_blasted.txt"
@@ -71,30 +73,32 @@ os.system(blastcmd)
 os.system(igblastcmd)
 
 
+segment_dict = {"FR1-IMGT": "FR1", "FR2-IMGT": "FR2", "CDR1-IMGT": "CDR1", "CDR2-IMGT":"CDR2"}
 outinfo = []
 with open(tmpfile_v, "r") as inp:
     for line in inp:
         if line.startswith("Query="):
             query = line[6:].strip()
+
             for line in inp:
                 if line.startswith("\n"):
                     break
                 query += line.strip()
+
             for line in inp:
-                if line.startswith("CDR1"):
+                if line.startswith(("FR1", "CDR1", "FR2", "CDR2", "FR3")):
                     info = line.strip().split()
-                    outinfo.append([query, "CDR1", int(info[1])-1, int(info[2])])
-                if line.startswith("CDR2"):
-                    info = line.strip().split()
-                    outinfo.append([query, "CDR2", int(info[1]) - 1, int(info[2])])
-                if line.startswith("FR3"):
-                    info = line.strip().split()
-                    outinfo.append([query, "CDR3", int(info[2]) - 1, 0])
-                    break
+                    start_pos = int(info[1])
+                    end_pos = int(info[2])
+                    if line.startswith("FR3"):
+                        outinfo.append([query, "FR3", start_pos - 1, end_pos-1])
+                        outinfo.append([query, "CDR3", end_pos - 1, 0])
+                        break
+                    elif info[0] in segment_dict:
+                        outinfo.append([query, segment_dict[info[0]], start_pos - 1, end_pos])
 
 
 outdf = pd.DataFrame(outinfo, columns=["query", "CDRtype", "start", "end"])
-
 
 with open(tmpfile_j, "r") as inp:
     for line in inp:
@@ -107,9 +111,28 @@ with open(tmpfile_j, "r") as inp:
             for line in inp:
                 if line.startswith("Query "):
                     info = line.split()
-                    outdf.loc[(outdf["query"] == query) & (outdf["CDRtype"] == "CDR3"), ("end")] = int(info[1])
+                    outdf.loc[(outdf["query"] == query) & (outdf["CDRtype"] == "CDR3"), "end"] = int(info[1])
                     break
-outdf.to_csv(outfile, sep="\t", index=None)
+
+outdf["length"] = outdf["end"] - outdf["start"]
+
+
+def slice_sequence(df, fullseqcol, seqcol, startcol, endcol):
+    def slice_seq(fullseq, start, end):
+        return fullseq[start:end]
+
+    df.loc[:, seqcol] = df.apply(lambda col: slice_seq(col[fullseqcol], col[startcol], col[endcol]), axis=1)
+    return df[seqcol]
+
+
+with open(inpfile, "r") as inp:
+    for record in SeqIO.parse(inp, "fasta"):
+        outdf.loc[(outdf["query"] == record.description), "fullseq"] = str(record.seq)
+
+
+outdf["sequence"] = slice_sequence(outdf, "fullseq", "sequence", "start", "end")
+
+outdf.to_csv(outfile, columns=["query", "CDRtype", "start", "end", "length", "sequence"], sep="\t", index=None)
 
 
 os.remove(tmpfile_j)

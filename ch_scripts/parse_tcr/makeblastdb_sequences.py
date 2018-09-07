@@ -12,7 +12,7 @@ parser.add_argument(
     "--inpdb", nargs=1, type=str, default="sequence_db",#_nucleotide.fasta",
                     help="input file path.")
 parser.add_argument(
-    "--outdb", nargs=1, type=str, default="igblast/igblastdb", help="path to output data"
+    "--outdb", nargs=1, type=str, default="igblast/igblast_db", help="path to output data"
 )
 parser.add_argument(
     "--seqtype", nargs=1, type=str, default="aminoacid", help="nucleotide or aminoacid sequences?")
@@ -33,7 +33,6 @@ def crdir(dir):
     if not os.path.exists(dir):
         os.mkdir(dir)
 
-
 crdir(outdb)
 
 species = ("HomoSapiens", "MusMusculus")
@@ -41,7 +40,7 @@ species = ("HomoSapiens", "MusMusculus")
 for seq_type in ("aminoacid", "nucleotide"):
     for spec in species:
         crdir(os.path.join(outdb, spec.lower()))
-        for segm in ("Variable", "Diversity", "Joining"):
+        for segm in ("Variable", "Diversity", "Joining", "Constant"):
             workfile = os.path.join(spec.lower(), "{}_{}_{}_sequences.fasta".format(seq_type, spec, segm))
             inpfile = os.path.join(sequencedb, workfile)
             outfile = os.path.join(outdb, workfile)
